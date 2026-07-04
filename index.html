@@ -1,37 +1,490 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 여행 버킷리스트</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Travel Wallet</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
+
 <body>
 
-<header>
-    <h1>🌍 나의 여행 버킷리스트</h1>
-    <p>가보고 싶은 여행지를 기록해보세요!</p>
+<div class="phone">
+
+<header class="header">
+
+<div class="top">
+
+<i class="fa-solid fa-bars"></i>
+
+<h1>
+동유럽 여행
+<span>🇨🇿 🇦🇹 🇭🇺</span>
+</h1>
+
+<i class="fa-regular fa-bell"></i>
+
+</div>
+
+<p class="country">
+체코 · 오스트리아 · 헝가리
+</p>
+
+<div class="date-row">
+
+<p>
+2026.10.28 (수)
+~
+2026.11.10 (화)
+</p>
+
+<div class="dday">
+D-155
+</div>
+
+</div>
+
 </header>
 
 <main>
 
-    <section class="input-box">
-        <input
-            type="text"
-            id="placeInput"
-            placeholder="여행지를 입력하세요"
-        >
+<section class="wallet-wrap">
 
-        <button onclick="addPlace()">
-            추가
-        </button>
-    </section>
+<div class="wallet-card">
 
-    <section>
-        <ul id="placeList"></ul>
-    </section>
+<div class="wallet-title">
+
+<span>
+트래블월렛 잔액
+</span>
+
+<i class="fa-regular fa-credit-card"></i>
+
+</div>
+
+<div class="money">
+
+<div class="row">
+
+<span>EUR</span>
+
+<strong id="wallet-eur">
+€682.45
+</strong>
+
+</div>
+
+<div class="row">
+
+<span>CZK</span>
+
+<strong id="wallet-czk">
+12,450 Kč
+</strong>
+
+</div>
+
+<div class="row">
+
+<span>HUF</span>
+
+<strong id="wallet-huf">
+245,670 Ft
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="wallet-card">
+
+<div class="wallet-title">
+
+<span>
+현금 잔액
+</span>
+
+<i class="fa-regular fa-wallet"></i>
+
+</div>
+
+<div class="money">
+
+<div class="row">
+
+<span>EUR</span>
+
+<strong id="cash-eur">
+€120.00
+</strong>
+
+</div>
+
+<div class="row">
+
+<span>CZK</span>
+
+<strong id="cash-czk">
+2,300 Kč
+</strong>
+
+</div>
+
+<div class="row">
+
+<span>HUF</span>
+
+<strong id="cash-huf">
+45,000 Ft
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="next-card">
+
+<div class="left">
+
+<div class="calendar">
+
+<i class="fa-regular fa-calendar"></i>
+
+</div>
+
+<div>
+
+<h3>다음 일정</h3>
+
+<p id="nextSchedule">
+항공권 결제
+</p>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<p id="scheduleDate">
+2026.10.31 (토)
+09:20
+</p>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</div>
+
+</section>
+<section class="settlement-card">
+
+<h3>정산</h3>
+
+<div class="members">
+
+<div class="member">
+
+<div class="avatar blue">
+J
+</div>
+
+<div class="info">
+
+<h4>주혜</h4>
+
+<p class="plus">
++82,350원
+</p>
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="member">
+
+<div class="avatar orange">
+J
+</div>
+
+<div class="info">
+
+<h4>정은</h4>
+
+<p class="minus">
+-82,350원
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="summary-card">
+
+<div class="summary-box">
+
+<h4>오늘 사용</h4>
+
+<div class="summary-money">
+
+<div>
+
+<span>EUR</span>
+
+<strong>€4.85</strong>
+
+</div>
+
+<div>
+
+<span>CZK</span>
+
+<strong>120.00 Kč</strong>
+
+</div>
+
+<div>
+
+<span>HUF</span>
+
+<strong>2,100 Ft</strong>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="summary-box">
+
+<h4>이번 여행 사용</h4>
+
+<div class="summary-money">
+
+<div>
+
+<span>EUR</span>
+
+<strong>€53.55</strong>
+
+</div>
+
+<div>
+
+<span>CZK</span>
+
+<strong>12,450 Kč</strong>
+
+</div>
+
+<div>
+
+<span>HUF</span>
+
+<strong>245,670 Ft</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="recent-card">
+
+<div class="card-header">
+
+<h3>최근 거래</h3>
+
+<a href="#">
+더보기
+</a>
+
+</div>
+
+<ul id="transactionList">
+
+<li>
+
+<div class="emoji">🍜</div>
+
+<div class="detail">
+
+<h4>라면 (공동)</h4>
+
+<p>식비 · 트래블월렛 · 주혜</p>
+
+</div>
+
+<div class="price">
+
+<strong>-€2.30</strong>
+
+<span>오늘 12:30</span>
+
+</div>
+
+</li>
+
+<li>
+
+<div class="emoji">🏪</div>
+
+<div class="detail">
+
+<h4>세븐일레븐 (공동)</h4>
+
+<p>식비 · 트래블월렛 · 공동</p>
+
+</div>
+
+<div class="price">
+
+<strong>-€0.54</strong>
+
+<span>오늘 10:15</span>
+
+</div>
+
+</li>
+
+<li>
+
+<div class="emoji">🚆</div>
+
+<div class="detail">
+
+<h4>JR 지하철 (공동)</h4>
+
+<p>교통 · 트래블월렛 · 정은</p>
+
+</div>
+
+<div class="price">
+
+<strong>-€1.10</strong>
+
+<span>오늘 09:02</span>
+
+</div>
+
+</li>
+
+</ul>
+
+</section>
+<nav class="bottom-nav">
+
+<button class="active">
+<i class="fa-solid fa-house"></i>
+<span>홈</span>
+</button>
+
+<button>
+<i class="fa-solid fa-list"></i>
+<span>거래 목록</span>
+</button>
+
+<button class="plus-btn">
+<i class="fa-solid fa-plus"></i>
+</button>
+
+<button>
+<i class="fa-solid fa-wallet"></i>
+<span>공용지갑</span>
+</button>
+
+<button>
+<i class="fa-regular fa-user"></i>
+<span>정산</span>
+</button>
+
+</nav>
 
 </main>
+
+</div>
+
+<!-- 거래 추가 모달 -->
+
+<div class="modal" id="addModal">
+
+<div class="modal-content">
+
+<h2>거래 등록</h2>
+
+<input
+type="text"
+id="title"
+placeholder="항목명">
+
+<select id="currency">
+
+<option value="EUR">EUR</option>
+<option value="CZK">CZK</option>
+<option value="HUF">HUF</option>
+
+</select>
+
+<input
+type="number"
+id="amount"
+placeholder="금액">
+
+<select id="category">
+
+<option>식비</option>
+<option>교통</option>
+<option>쇼핑</option>
+<option>숙소</option>
+<option>기타</option>
+
+</select>
+
+<select id="payer">
+
+<option>주혜</option>
+<option>정은</option>
+<option>공동</option>
+
+</select>
+
+<button id="saveBtn">
+저장하기
+</button>
+
+<button id="closeBtn" class="close">
+
+닫기
+
+</button>
+
+</div>
+
+</div>
 
 <script src="app.js"></script>
 
